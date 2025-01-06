@@ -35,6 +35,7 @@ nav {
 }
 
 .nav-links {
+    display: flex;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -64,7 +65,7 @@ nav {
 
 #hero {
     background: url(Images/banner.jpg);
-    background-size: contain;
+    background-size: flex;
     color: white;
     transition: all;
     padding: 120px;
@@ -75,7 +76,7 @@ nav {
 /*logo*/
 .logosec{
     background-color: #fbfbfb;
-    background-size: absolute;
+    background-size: flex;
     height: 5%;
     width: 100%;
 }
@@ -141,6 +142,7 @@ nav {
 
 /* Gallery Container */
 .gallery {
+    flex-wrap: wrap;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: 90px; /* Space between items */
@@ -165,7 +167,7 @@ nav {
 /* Image Styling */
 .portfolio-item img {
     width: 100%; /* Make images fill the container */
-    height: auto; /* Maintain aspect ratio */
+    height: 100%; /* Maintain aspect ratio */
     display: block; /* Remove extra space below images */
     object-fit: fill;
 }
@@ -267,4 +269,153 @@ footer i {
 footer p {
     margin-top: 10px;
     font-size: 0.9em;
+}
+
+/* Media Queries */
+
+/* Mobile Devices (max-width: 600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 10px;
+    }
+
+    .logo img {
+        max-width: 70px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    #hero {
+        font-size: medium;
+        padding:220px;
+        padding-left: 19%;
+        padding-top: 1%;
+        padding-bottom: 9%;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .introduction {
+        flex-direction: column;
+        padding:20px;
+        gap: 5px;
+        background-size: contain;
+        background-repeat: repeat;
+        height: fit-content;
+        text-align: center;
+        
+    }
+
+    .btn {
+        font-size: 0.9em;
+        padding: 8px 10px;
+    }
+
+    #logos{
+        white-space: nowrap;
+        padding-top: 1%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        gap: 30px;
+    }
+
+    #portfolio{
+        size:200%;
+        max-width: fit-content;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    form input, form textarea {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+/* Tablets (min-width: 601px and max-width: 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .logo img {
+        max-width: 70px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 1.1em;
+    }
+
+    #hero {
+        font-size: large;
+        padding: 80px;
+    }
+
+    .introduction {
+        flex-direction: column;
+        padding: 50px;
+        gap: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        gap: 30px;
+    }
+
+    form input, form textarea {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+
+/* Desktops (min-width: 1025px) */
+@media (min-width: 1025px) {
+    header {
+        padding: 20px 40px;
+    }
+
+    .logo img {
+        max-width: 80px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 1.2em;
+    }
+
+    #hero {
+        font-size: x-large;
+        padding: 120px;
+    }
+
+    .introduction {
+        flex-direction: row;
+        padding: 96px;
+        gap: 30px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for larger screens */
+        gap: 40px;
+    }
+
+    form input, form textarea {
+        font-size: 1.1em;
+        padding: 12px;
+    }
 }
